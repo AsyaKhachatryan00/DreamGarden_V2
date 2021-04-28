@@ -1,0 +1,39 @@
+<resources>
+    <string name="app_name">Dream Garden</string>
+    <string name="sign_in">Մուտք</string>
+    <string name="not_now">Հետո</string>
+    <string name="registration">Գրանցվել</string>
+    <string name="email">Էլ․ հասցե</string>
+    <string name="password">Գաղտնաբառ</string>
+    <string name="forgot">Մոռացե՞լ եք գաղտնաբառը</string>
+    <string name="name">Անուն</string>
+    <string name="confirm_pass">Հաստատել գաղտնաբառը</string>
+    <string name="phone">Հեռախոս</string>
+
+    <string name="title_activity_home">Home</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="slogan"><![CDATA[Restaurant Cafe & Bar]]></string>
+    <string name="menu">Մենյու</string>
+    <string name="gallery">Տեսադարան</string>
+    <string name="book_now">Սեղանի Ամրագրում</string>
+    <string name="sales">Առաջարկներ</string>
+    <string name="settings">Պարամետրեր</string>
+    <string name="order">Զամբյուղ</string>
+    <string name="guest">Guest</string>
+
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Պարամետրեր</string>
+
+    <string name="menu_home">Մենյու</string>
+    <string name="menu_gallery">Տեսադարան</string>
+    <string name="menu_sales">Առաջարկներ</string>
+    <string name="menu_food_list">Foods</string>
+    <string name="best_details">Լավագույն առաջարկներ</string>
+    <string name="popular_categories">Հանրաճանաչ կատեգորիաներ</string>
+    <string name="best_deals">Լավագույն առաջարկներ</string>
+    <string name="gallery_images">Պատկերադարան</string>
+    <string name="details">Food Details</string>
+
+</resources>

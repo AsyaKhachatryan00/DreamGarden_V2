@@ -1,0 +1,32 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.DreamGarden" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/Green</item>
+        <item name="colorPrimaryDark">@color/NewLight</item>
+        <item name="colorAccent">@color/white</item>
+        <item name="background">@color/LightGreen</item>
+    </style>
+
+    <style name="Theme.DreamGarden.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="Theme.DreamGarden.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="Theme.DreamGarden.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="CollapsedAdapter" parent="TextAppearance.AppCompat.Medium">
+        <item name="textSize">25sp</item>
+        <item name="textColor">@color/white</item>
+        <item name="textInputStyle">@id/normal</item>
+        <item name="fontFamily">@font/arm</item>
+    </style>
+
+    <style name="ExpandedAdapter" parent="TextAppearance.AppCompat.Title">
+        <item name="textColor">@color/white</item>
+        <item name="textInputStyle">@id/normal</item>
+        <item name="fontFamily">@font/arm</item>
+    </style>
+
+</resources>

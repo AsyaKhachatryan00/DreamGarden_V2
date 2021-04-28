@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.example.dreamgarden.ui.home.HomeFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/nav_gallery"
+        android:name="com.example.dreamgarden.ui.gallery.GalleryFragment"
+        android:label="@string/menu_gallery"
+        tools:layout="@layout/fragment_gallery" />
+
+    <fragment
+        android:id="@+id/nav_sales"
+        android:name="com.example.dreamgarden.ui.sales.SalesFragment"
+        android:label="@string/menu_sales"
+        tools:layout="@layout/fragment_sales" />
+
+    <fragment
+        android:id="@+id/nav_food_list"
+        android:name="com.example.dreamgarden.ui.foodList.FoodList"
+        android:label="@string/menu_food_list"
+        tools:layout="@layout/fragment_food_list" />
+
+    <fragment
+        android:id="@+id/nav_images"
+        android:name="com.example.dreamgarden.ui.images.ImagesFragment"
+        android:label="@string/gallery_images"
+        tools:layout="@layout/fragment_images" />
+
+    <fragment
+        android:id="@+id/nav_food_details"
+        android:name="com.example.dreamgarden.ui.foodDetails.FoodDetailsFragment"
+        android:label="@string/details"
+        tools:layout="@layout/fragment_food_details" />
+
+    <fragment
+        android:id="@+id/nav_image"
+        android:name="com.example.dreamgarden.ui.image.ImageFragment"
+        android:label="@string/gallery_images"
+        tools:layout="@layout/image_fragment" />
+
+</navigation>
