@@ -1,15 +1,12 @@
 package com.example.dreamgarden.Database;
 
-
 import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
-
 @Entity(tableName = "Cart")
 public class CartItem {
-
     @PrimaryKey
     @NonNull
     @ColumnInfo(name = "foodId")
@@ -20,14 +17,19 @@ public class CartItem {
 
      @ColumnInfo(name = "foodImage")
     private String foodImage;
+
      @ColumnInfo(name = "foodPrice")
-    private String foodPrice;
+    private Double foodPrice;
+
     @ColumnInfo(name = "foodCount")
-    private String foodCount;
+    private int foodCount;
+
     @ColumnInfo(name = "foodExtraPrice")
-    private String foodExtraPrice;
+    private Double foodExtraPrice;
+
     @ColumnInfo(name = "userPhone")
     private String userPhone;
+
     @ColumnInfo(name = "uId")
     private String uid;
 
@@ -56,27 +58,27 @@ public class CartItem {
         this.foodImage = foodImage;
     }
 
-    public String getFoodPrice() {
+    public Double getFoodPrice() {
         return foodPrice;
     }
 
-    public void setFoodPrice(String foodPrice) {
+    public void setFoodPrice(Double foodPrice) {
         this.foodPrice = foodPrice;
     }
 
-    public String getFoodCount() {
+    public int getFoodCount() {
         return foodCount;
     }
 
-    public void setFoodCount(String foodCount) {
+    public void setFoodCount(int foodCount) {
         this.foodCount = foodCount;
     }
 
-    public String getFoodExtraPrice() {
+    public Double getFoodExtraPrice() {
         return foodExtraPrice;
     }
 
-    public void setFoodExtraPrice(String foodExtraPrice) {
+    public void setFoodExtraPrice(Double foodExtraPrice) {
         this.foodExtraPrice = foodExtraPrice;
     }
 

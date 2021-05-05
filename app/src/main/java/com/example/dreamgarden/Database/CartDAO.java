@@ -16,14 +16,15 @@ import io.reactivex.Single;
 
 @Dao
 public interface CartDAO {
+
     @Query("SELECT * FROM Cart WHERE uId=:uId")
     Flowable<List<CartItem>> getAllCart(String uId);
 
     @Query("SELECT COUNT(*) from Cart WHERE uId=:uId")
     Single<Integer> countItemCart(String uId);
 
-    @Query("SELECT SUM(foodPrice*foodCount) + (foodExtraPrice*foodCount) FROM Cart WHERE uId=:uId")
-    Single<Long> sumPriceInCart(String uId);
+    @Query("SELECT SUM((foodPrice+foodExtraPrice*foodCount) * foodCount) FROM Cart WHERE uId=:uId")
+    Single<Double> sumPriceInCart(String uId);
 
     @Query("SELECT * FROM Cart WHERE foodId=:foodId AND uId=:uId")
     Single<CartItem> getItemInCart(String foodId, String uId);

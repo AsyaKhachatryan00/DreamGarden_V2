@@ -30,7 +30,7 @@
             android:title="@string/settings" />
 
         <item
-            android:id="@+id/order"
+            android:id="@+id/cartFragment"
             android:icon="@drawable/order"
             android:title="@string/order" />
     </group>

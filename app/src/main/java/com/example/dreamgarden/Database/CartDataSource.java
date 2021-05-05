@@ -15,9 +15,10 @@ import io.reactivex.Single;
 public interface CartDataSource {
 
     Flowable<List<CartItem>> getAllCart(String uId);
+
     Single<Integer> countItemCart(String uId);
 
-    Single<Long> sumPriceInCart(String uId);
+    Single<Double> sumPriceInCart(String uId);
 
     Single<CartItem> getItemInCart(String foodId, String uId);
 

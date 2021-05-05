@@ -35,5 +35,13 @@
     <string name="best_deals">Լավագույն առաջարկներ</string>
     <string name="gallery_images">Պատկերադարան</string>
     <string name="details">Food Details</string>
+    <string name="address">Հասցե</string>
+    <string name="empty">ԶԱՄԲՅՈՒՂԸ ԴԱՏԱՐԿ Է</string>
+    <string name="price">Գումար։ 0,0</string>
+    <string name="total_price">Ընդհանուր գումար: 0.0</string>
+    <string name="delivery">Առաքում։ 1000</string>
+    <string name="service_fee">Սպասարկման վճար։ 10%</string>
+    <string name="confirm">Հաստատել պատվերը</string>
+
 
 </resources>

@@ -25,7 +25,7 @@ public class LocalCartDataSource implements CartDataSource{
     }
 
     @Override
-    public Single<Long> sumPriceInCart(String uId) {
+    public Single<Double> sumPriceInCart(String uId) {
         return cartDAO.sumPriceInCart(uId);
     }
 
@@ -40,8 +40,8 @@ public class LocalCartDataSource implements CartDataSource{
     }
 
     @Override
-    public Single<Integer> updateCartItems(CartItem cartItems) {
-        return cartDAO.updateCartItems(cartItems);
+    public Single<Integer> updateCartItems(CartItem cartItem) {
+        return cartDAO.updateCartItems(cartItem);
     }
 
     @Override

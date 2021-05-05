@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="10dp"
+    android:layout_centerInParent="true">
+
+    <EditText
+        android:id="@+id/Name"
+        android:layout_width="210dp"
+        android:layout_height="45dp"
+        android:layout_margin="8dp"
+        android:background="@color/Green"
+        android:hint="@string/name"
+        android:inputType="textPersonName"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#4DFFFFFF"
+        android:textSize="20sp"
+        android:layout_gravity="center" />
+
+    <EditText
+        android:id="@+id/Phone"
+        android:layout_width="210dp"
+        android:layout_height="45dp"
+        android:layout_margin="8dp"
+        android:background="@color/Green"
+        android:focusable="false"
+        android:inputType="phone"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#4DFFFFFF"
+        android:textSize="20sp"
+        android:layout_gravity="center"/>
+
+    <EditText
+        android:id="@+id/Email"
+        android:layout_width="210dp"
+        android:layout_height="45dp"
+        android:layout_margin="8dp"
+        android:background="@color/Green"
+        android:hint="@string/email"
+        android:inputType="textEmailAddress"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#4DFFFFFF"
+        android:textSize="20sp"
+        android:layout_gravity="center"/>
+
+    <EditText
+        android:id="@+id/address"
+        android:layout_width="210dp"
+        android:layout_height="45dp"
+        android:layout_margin="8dp"
+        android:background="@color/Green"
+        android:hint="@string/address"
+        android:inputType="textPostalAddress"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#4DFFFFFF"
+        android:textSize="20sp"
+        android:layout_gravity="center" />
+
+    <!--    <Button
+            android:id="@+id/sign_up"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/registration"
+            android:textSize="22sp"
+            android:textColor="@color/white"
+            android:fontFamily="@font/arm"
+            app:backgroundTint="@color/Green"
+            android:layout_gravity="center"/>
+
+        <TextView
+            android:id="@+id/sign_in_now"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:layout_gravity="end"
+            android:background="@color/NewLight"
+            android:text="@string/sign_in"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:fontFamily="@font/arm"/>-->
+
+</LinearLayout>

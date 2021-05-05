@@ -2,15 +2,32 @@ package com.example.dreamgarden.Models;
 
 public class User {
 
-    public String FName, PNumber, E_mail;
+    private String FName, PNumber, E_mail, Address, Uid;
 
     public User() { }
 
-    public User(String E_mail, String FName, String PNumber) {
-        this.E_mail = E_mail;
+    public User(String FName, String PNumber, String e_mail, String address, String uid) {
         this.FName = FName;
         this.PNumber = PNumber;
+        E_mail = e_mail;
+        Address = address;
+        Uid = uid;
+    }
 
+    public String getAddress() {
+        return Address;
+    }
+
+    public void setAddress(String address) {
+        Address = address;
+    }
+
+    public String getUid() {
+        return Uid;
+    }
+
+    public void setUid(String uid) {
+        Uid = uid;
     }
 
     public String getFName() {

@@ -4,6 +4,7 @@
     package="com.example.dreamgarden">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
         android:allowBackup="true"
@@ -13,19 +14,15 @@
         android:supportsRtl="true"
         tools:replace="android:theme"
         android:theme="@style/Theme.DreamGarden">
-        <activity android:name=".Food.Food_Details"></activity>
-        <activity android:name=".Food_List" />
-        <activity android:name=".Gallery.GalleryImages" />
         <activity
             android:name=".Home"
             android:label="@string/title_activity_home"
             android:theme="@style/Theme.DreamGarden.NoActionBar" />
         <activity android:name=".Sign_in" />
-        <activity android:name=".Registration" />
+<!--        <activity android:name=".Registration" />-->
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
