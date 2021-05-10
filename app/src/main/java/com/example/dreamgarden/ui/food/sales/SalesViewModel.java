@@ -1,7 +1,6 @@
-package com.example.dreamgarden.ui.sales;
+package com.example.dreamgarden.ui.food.sales;
 
 import androidx.annotation.NonNull;
-import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 

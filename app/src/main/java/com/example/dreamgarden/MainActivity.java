@@ -8,11 +8,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
-
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-
 import com.example.dreamgarden.Common.Common;
 import com.example.dreamgarden.Models.User;
 import com.example.dreamgarden.Remote.ICloudFunctions;
@@ -26,10 +24,8 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-
 import java.util.Arrays;
 import java.util.List;
-
 import dmax.dialog.SpotsDialog;
 import io.reactivex.disposables.CompositeDisposable;
 
@@ -49,25 +45,19 @@ public class MainActivity extends AppCompatActivity  {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        init();
-
-    }
+        init();    }
 
     @Override
     protected void onStart() {
         super.onStart();
-        mAuth.addAuthStateListener(listener);;
-    }
+        mAuth.addAuthStateListener(listener);    }
 
     @Override
     protected void onStop() {
         if (listener != null )
             mAuth.removeAuthStateListener(listener);
         compositeDisposable.clear();
-        super.onStop();
-    }
-
+        super.onStop();    }
 
     private void init() {
         providers = Arrays.asList(new AuthUI.IdpConfig.PhoneBuilder().build());
@@ -83,10 +73,7 @@ public class MainActivity extends AppCompatActivity  {
                 checkUserFromFirebase(user);
             } else { phoneLogIn(); }
         };
-
-
     }
-
 
     private void checkUserFromFirebase(FirebaseUser user) {
         dialog.show();
@@ -99,7 +86,6 @@ public class MainActivity extends AppCompatActivity  {
                             goToHomeActivity(userModel);
                         } else { showRegisterDialog(user); }
                     }
-
                     @Override
                     public void onCancelled(@NonNull DatabaseError error) {
                         dialog.dismiss();
@@ -156,16 +142,13 @@ public class MainActivity extends AppCompatActivity  {
         builder.setView(view);
         androidx.appcompat.app.AlertDialog dialog = builder.create();
         dialog.show();
-
     }
-
 
     private void phoneLogIn() {
         startActivityForResult(AuthUI.getInstance()
                 .createSignInIntentBuilder()
                         .setAvailableProviders(providers).build(),
                 APP_REQUEST_CODE);
-
     }
 
 @Override
@@ -176,9 +159,8 @@ protected void onActivityResult(int requestCode, int resultCode, @Nullable Inten
         if (requestCode == RESULT_OK) {
             FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         } else  {
-            Toast.makeText(this, "Failed to sign in", Toast.LENGTH_SHORT).show();
+//            Toast.makeText(this, "Failed to sign in", Toast.LENGTH_SHORT).show();
         }
-
     }
 }
 
@@ -187,6 +169,4 @@ protected void onActivityResult(int requestCode, int resultCode, @Nullable Inten
         startActivity(new Intent(MainActivity.this, Home.class));
         finish();
     }
-
-
 }

@@ -18,8 +18,7 @@
             android:name=".Home"
             android:label="@string/title_activity_home"
             android:theme="@style/Theme.DreamGarden.NoActionBar" />
-        <activity android:name=".Sign_in" />
-<!--        <activity android:name=".Registration" />-->
+
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

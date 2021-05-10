@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:orientation="vertical"
+    android:padding="8dp"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/choice"
+        android:textSize="22sp"
+        android:textColor="#C5C5C5"
+        android:textStyle="bold"
+        android:fontFamily="@font/boloragir" />
+
+    <RadioGroup
+        android:theme="@style/radio"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <RadioButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/restoran"
+            android:text="@string/serviceFee"
+            android:fontFamily="@font/boloragir"
+            android:textSize="18sp"
+            android:textStyle="italic" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/edt_table"
+            android:inputType="number"
+            android:textSize="22sp"
+            android:fontFamily="@font/boloragir"
+            android:hint="@string/table_location" />
+
+        <RadioButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/delivery"
+            android:text="@string/delivery"
+            android:fontFamily="@font/boloragir"
+            android:textSize="18sp"
+            android:textStyle="italic" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/edt_address"
+            android:textSize="22sp"
+            android:visibility="gone"
+            android:fontFamily="@font/boloragir"
+            android:hint="@string/address" />
+
+    <RadioGroup
+        android:visibility="gone"
+        android:id="@+id/group"
+        android:theme="@style/radio"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <RadioButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/home_address"
+            android:checked="true"
+            android:text="@string/home"
+            android:fontFamily="@font/boloragir"
+            android:textSize="18sp"
+            android:textStyle="italic" />
+
+        <RadioButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/other"
+            android:text="@string/other"
+            android:fontFamily="@font/boloragir"
+            android:textSize="18sp"
+            android:textStyle="italic" />
+
+    </RadioGroup>
+
+    </RadioGroup>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/payment"
+        android:textSize="22sp"
+        android:textColor="#C5C5C5"
+        android:textStyle="bold"
+        android:fontFamily="@font/boloragir" />
+
+    <RadioGroup
+        android:theme="@style/radio"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <RadioButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/rdi_cod"
+            android:checked="true"
+            android:text="@string/cash"
+            android:fontFamily="@font/boloragir"
+            android:textSize="18sp"
+            android:textStyle="italic" />
+
+        <RadioButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/rdi_braintree"
+            android:text="@string/online"
+            android:fontFamily="@font/boloragir"
+            android:textSize="18sp"
+            android:textStyle="italic" />
+
+    </RadioGroup>
+
+<!--    <TextView
+        android:id="@+id/totalPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/boloragir"
+        android:text="@string/price"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="8dp"
+        android:lineSpacingMultiplier="0.5"
+        android:layout_marginStart="8dp"
+        android:textSize="22sp" />-->
+
+</LinearLayout>

@@ -1,21 +1,21 @@
 package com.example.dreamgarden.ui.image;
 
 import android.os.Bundle;
-import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModelProvider;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.animation.AnimationUtils;
-import android.view.animation.LayoutAnimationController;
 import android.widget.ImageView;
 
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProvider;
+
 import com.bumptech.glide.Glide;
+import com.example.dreamgarden.EventBus.HideFABCart;
 import com.example.dreamgarden.Models.Images;
 import com.example.dreamgarden.R;
+
+import org.greenrobot.eventbus.EventBus;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -39,7 +39,10 @@ public class ImageFragment extends Fragment {
 
         mViewModel.getMutableLiveData().observe(this, images -> {
             displayImage(images);
+
         });
+
+        EventBus.getDefault().postSticky(new HideFABCart(true));
 
         return root;
     }
@@ -47,6 +50,12 @@ public class ImageFragment extends Fragment {
     private void displayImage(Images images) {
         Glide.with(getContext()).load(images.getImage())
                 .into(image);
+    }
+
+        @Override
+    public void onStop() {
+        EventBus.getDefault().postSticky(new HideFABCart(false));
+        super.onStop();
     }
 
 }

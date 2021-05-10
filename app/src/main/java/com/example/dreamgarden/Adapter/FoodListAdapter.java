@@ -5,7 +5,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -22,10 +21,10 @@ import com.example.dreamgarden.Database.LocalCartDataSource;
 import com.example.dreamgarden.EventBus.CounterCartEvent;
 import com.example.dreamgarden.EventBus.FoodItemClick;
 import com.example.dreamgarden.Models.Foods;
-import com.example.dreamgarden.Models.Gallery;
 import com.example.dreamgarden.R;
 
 import org.greenrobot.eventbus.EventBus;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
 
@@ -79,19 +78,72 @@ public class FoodListAdapter  extends RecyclerView.Adapter<FoodListAdapter.ViewH
             cartItem.setFoodName(foodsList.get(position).getName());
             cartItem.setFoodImage(foodsList.get(position).getImage());
             cartItem.setFoodPrice(Double.valueOf(String.valueOf(foodsList.get(position).getPrice())));
-            cartItem.getFoodCount();
+            cartItem.setFoodCount(1);
             cartItem.setFoodExtraPrice(0.0);
 
-           compositeDisposable.add(cartDataSource.insertOrReplaceAll(cartItem)
-           .subscribeOn(Schedulers.io())
-           .observeOn(AndroidSchedulers.mainThread())
-           .subscribe(() -> {
-               Toast.makeText(context, "Add to Cart success", Toast.LENGTH_SHORT).show();
-               EventBus.getDefault().postSticky(new CounterCartEvent(true));
-               }, throwable -> {
-                       Toast.makeText(context, "[CART ERROR]"+throwable.getMessage(), Toast.LENGTH_SHORT).show();
-                   }));
+      cartDataSource.getAllItemInCart(Common.currentUser.getUid(),
+              cartItem.getFoodId())
+              .subscribeOn(Schedulers.io())
+              .observeOn(AndroidSchedulers.mainThread())
+              .subscribe(new SingleObserver<CartItem>() {
+     @Override
+     public void onSubscribe(@NotNull Disposable d) {  }
 
+    @Override
+    public void onSuccess(@NotNull CartItem cartItemFromDB) {
+         if (cartItemFromDB.equals(cartItem)) {
+             cartItemFromDB.setFoodExtraPrice(cartItem.getFoodExtraPrice());
+             cartItemFromDB.setFoodCount(cartItemFromDB.getFoodCount() + cartItem.getFoodCount());
+             cartDataSource.updateCartItems(cartItemFromDB)
+                     .subscribeOn(Schedulers.io())
+                     .observeOn(AndroidSchedulers.mainThread())
+                     .subscribe(new SingleObserver<Integer>() {
+                   @Override
+                   public void onSubscribe(@NotNull Disposable d) {
+
+                                            }
+
+                   @Override
+                   public void onSuccess(@NotNull Integer integer) {
+                       Toast.makeText(context, "Ավելացված է զամնյուղում", Toast.LENGTH_SHORT).show();
+                       EventBus.getDefault().postSticky(new CounterCartEvent(true));
+                   }
+
+                   @Override
+                   public void onError(@NotNull Throwable e) {
+                       Toast.makeText(context, "[UPDATE CART]"+e.getMessage(), Toast.LENGTH_SHORT).show();
+                   }
+                     });
+         }
+         else {
+             compositeDisposable.add(cartDataSource.insertOrReplaceAll(cartItem)
+                     .subscribeOn(Schedulers.io())
+                     .observeOn(AndroidSchedulers.mainThread())
+                     .subscribe(() -> {
+                         Toast.makeText(context, "Ավելացված է զամնյուղում", Toast.LENGTH_SHORT).show();
+                         EventBus.getDefault().postSticky(new CounterCartEvent(true));
+                         }, throwable -> {
+                         Toast.makeText(context, "[CART ERROR]"+throwable.getMessage(), Toast.LENGTH_SHORT).show();
+                   }));
+         }
+     }
+
+     @Override
+     public void onError(@NotNull Throwable e) {
+         if (e.getMessage().contains("empty")) {
+             compositeDisposable.add(cartDataSource.insertOrReplaceAll(cartItem)
+                     .subscribeOn(Schedulers.io())
+                     .observeOn(AndroidSchedulers.mainThread())
+                     .subscribe(() -> {
+                         Toast.makeText(context, "Հաջողությամբ ավելացված է զամնյուղում", Toast.LENGTH_SHORT).show();
+                         EventBus.getDefault().postSticky(new CounterCartEvent(true));
+                     }, throwable -> {
+                         Toast.makeText(context, "[CART ERROR]"+throwable.getMessage(), Toast.LENGTH_SHORT).show();
+                     }));
+         }
+         else Toast.makeText(context, "[GET CART"+e.getMessage(), Toast.LENGTH_SHORT).show();
+     }
+              });
 
         });
 

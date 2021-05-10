@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/nav_home"
-        android:name="com.example.dreamgarden.ui.home.HomeFragment"
+        android:name="com.example.dreamgarden.ui.food.home.HomeFragment"
         android:label="@string/menu_home"
         tools:layout="@layout/fragment_home" />
 
@@ -19,25 +19,25 @@
 
     <fragment
         android:id="@+id/nav_sales"
-        android:name="com.example.dreamgarden.ui.sales.SalesFragment"
+        android:name="com.example.dreamgarden.ui.food.sales.SalesFragment"
         android:label="@string/menu_sales"
         tools:layout="@layout/fragment_sales" />
 
     <fragment
         android:id="@+id/nav_food_list"
-        android:name="com.example.dreamgarden.ui.foodList.FoodList"
+        android:name="com.example.dreamgarden.ui.food.foodList.FoodList"
         android:label="@string/menu_food_list"
         tools:layout="@layout/fragment_food_list" />
 
     <fragment
         android:id="@+id/nav_images"
         android:name="com.example.dreamgarden.ui.images.ImagesFragment"
-        android:label="@string/gallery_images"
+        android:label="@string/menu_gallery"
         tools:layout="@layout/fragment_images" />
 
     <fragment
         android:id="@+id/nav_food_details"
-        android:name="com.example.dreamgarden.ui.foodDetails.FoodDetailsFragment"
+        android:name="com.example.dreamgarden.ui.food.foodDetails.FoodDetailsFragment"
         android:label="@string/details"
         tools:layout="@layout/fragment_food_details" />
 
@@ -46,11 +46,28 @@
         android:name="com.example.dreamgarden.ui.image.ImageFragment"
         android:label="@string/menu_gallery"
         tools:layout="@layout/image_fragment" />
+
     <fragment
         android:id="@+id/cartFragment"
-        android:name="com.example.dreamgarden.ui.cart.CartFragment"
+        android:name="com.example.dreamgarden.ui.food.cart.CartFragment"
         android:label="@string/order"
         tools:layout="@layout/cart_fragment" />
 
+    <fragment
+        android:id="@+id/nav_book"
+        android:name="com.example.dreamgarden.ui.bookNow.BookNowFragment"
+        android:label="@string/book_now"
+        tools:layout="@layout/book_now_fragment" />
 
+    <fragment
+        android:id="@+id/nav_table"
+        android:name="com.example.dreamgarden.ui.tables.TablesFragment"
+        android:label="@string/table"
+        tools:layout="@layout/tables_fragment"/>
+
+    <fragment
+        android:id="@+id/nav_table_image"
+        android:name="com.example.dreamgarden.ui.table.TableFragment"
+        android:label="@string/table"
+        tools:layout="@layout/table_fragment"/>
 </navigation>

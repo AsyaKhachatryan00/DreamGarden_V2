@@ -4,7 +4,6 @@
         <item name="colorPrimary">@color/Green</item>
         <item name="colorPrimaryDark">@color/NewLight</item>
         <item name="colorAccent">@color/white</item>
-        <item name="background">@color/LightGreen</item>
     </style>
 
     <style name="Theme.DreamGarden.NoActionBar">
@@ -27,6 +26,26 @@
         <item name="textColor">@color/white</item>
         <item name="textInputStyle">@id/normal</item>
         <item name="fontFamily">@font/arm</item>
+    </style>
+
+    <style name="RelativeLayout" parent="Theme.MaterialComponents.DayNight" >
+        <item name="android:background">@color/LightGreen</item>
+        <item name="colorPrimary">@color/Green</item>
+        <item name="android:textColor">@color/DarkGreen</item>
+    </style>
+
+    <style name="textView" parent="Theme.MaterialComponents.DayNight">
+        <item name="android:textColor">@color/DarkGreen</item>
+    </style>
+
+    <style name="MyCardView" parent="CardView.Light">
+        <item name="cardBackgroundColor">@color/LightGreen</item>
+        <item name="android:textColor">@color/DarkGreen</item>
+        <item name="tint">@color/DarkGreen</item>
+    </style>
+
+    <style name="radio" parent="Theme.MaterialComponents.DayNight">
+        <item name="buttonTint">@color/Green</item>
     </style>
 
 </resources>

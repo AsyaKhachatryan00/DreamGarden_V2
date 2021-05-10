@@ -14,11 +14,4 @@
     android:src="@drawable/main"
     android:scaleType="fitCenter" />
 
-<!--<View-->
-<!--    android:id="@+id/activeImage"-->
-<!--    android:layout_width="match_parent"-->
-<!--    android:layout_height="wrap_content"-->
-<!--    android:background="#8c000000" />-->
-
-
 </FrameLayout>

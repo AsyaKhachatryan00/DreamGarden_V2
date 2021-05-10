@@ -46,7 +46,7 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.MyViewHolder> 
                 .into(holder.cart_image);
         holder.txt_food_name.setText(new StringBuilder(cartItemList.get(position).getFoodName()));
         holder.txt_food_price.setText(new StringBuilder("")
-        .append(cartItemList.get(position).getFoodPrice() + cartItemList.get(position).getFoodExtraPrice()));
+        .append(cartItemList.get(position).getFoodPrice()));
         holder.number_button.setNumber(String.valueOf(cartItemList.get(position).getFoodCount()));
 
         holder.number_button.setOnValueChangeListener((view, oldValue, newValue) -> {
@@ -60,7 +60,12 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.MyViewHolder> 
         return cartItemList.size();
     }
 
+        public CartItem getItemAtPosition(int pos) {
+            return cartItemList.get(pos);
+        }
+
     public class MyViewHolder extends RecyclerView.ViewHolder{
+
         private Unbinder unbinder;
         @BindView(R.id.cart_image)
         ImageView cart_image;
@@ -70,8 +75,6 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.MyViewHolder> 
         TextView txt_food_name;
         @BindView(R.id.number_button)
         ElegantNumberButton number_button;
-
-
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);

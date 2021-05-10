@@ -9,8 +9,11 @@ import android.widget.TextView;
 
 import com.asksira.loopingviewpager.LoopingPagerAdapter;
 import com.bumptech.glide.Glide;
+import com.example.dreamgarden.EventBus.BestDealItemClick;
 import com.example.dreamgarden.Models.BestDeal;
 import com.example.dreamgarden.R;
+
+import org.greenrobot.eventbus.EventBus;
 
 import java.util.List;
 
@@ -41,6 +44,10 @@ public class BestDealsAdapter extends LoopingPagerAdapter<BestDeal> {
        unbinder = ButterKnife.bind(this, convertView);
         Glide.with(convertView).load(itemList.get(listPosition).getImage()).into(img_best_deal);
         best_deal.setText(itemList.get(listPosition).getName());
+
+        convertView.setOnClickListener(v -> {
+            EventBus.getDefault().postSticky(new BestDealItemClick(itemList.get(listPosition)));
+        });
 
     }
 }

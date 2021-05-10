@@ -1,7 +1,6 @@
 package com.example.dreamgarden.Database;
 
 import android.content.Context;
-
 import androidx.room.Database;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
@@ -14,7 +13,7 @@ public abstract class CartDatabase extends RoomDatabase {
 
     public static CartDatabase getInstance(Context context) {
         if (instance == null)
-            instance = Room.databaseBuilder(context, CartDatabase.class, "DreamGardenDB").build();
+            instance = Room.databaseBuilder(context, CartDatabase.class, "DreamGardenDB12").build();
 
         return instance;
     }

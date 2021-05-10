@@ -1,16 +1,12 @@
-package com.example.dreamgarden.ui.sales;
+package com.example.dreamgarden.ui.food.sales;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.BaseAdapter;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -18,7 +14,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.asksira.loopingviewpager.LoopingViewPager;
 import com.example.dreamgarden.Adapter.BestDealsAdapter;
 import com.example.dreamgarden.Adapter.PopularCategoriesAdapter;
-import com.example.dreamgarden.Models.PopularCategory;
 import com.example.dreamgarden.R;
 
 import butterknife.BindView;
@@ -75,4 +70,5 @@ public class SalesFragment extends Fragment {
         viewPager.pauseAutoScroll();
         super.onPause();
     }
+
 }

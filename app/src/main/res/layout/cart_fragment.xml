@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    android:background="@color/LightGreen"
+    android:theme="@style/RelativeLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="8dp">
@@ -26,12 +25,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/empty"
+        android:gravity="center"
         android:fontFamily="@font/arm"
         android:layout_marginStart="20sp"
         android:layout_marginTop="20sp"
         android:layout_marginEnd="20sp"
         android:textSize="35sp"
-        android:textColor="@color/DarkGreen"
         android:layout_centerHorizontal="true" />
 
     <androidx.cardview.widget.CardView
@@ -47,7 +46,7 @@
             android:padding="8dp"
             android:layout_margin="8dp" >
 
-            <TextView
+<!--            <TextView
                 android:id="@+id/food_price"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -57,9 +56,9 @@
                 android:layout_marginTop="8dp"
                 android:layout_marginStart="8dp"
                 android:textSize="22dp"
-                android:layout_alignParentBottom="true" />
+                android:layout_alignParentBottom="true" />-->
 
-            <TextView
+<!--            <TextView
                 android:id="@+id/service_fee"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -69,7 +68,7 @@
                 android:layout_marginTop="8dp"
                 android:layout_marginStart="8dp"
                 android:textSize="22dp"
-                android:layout_alignParentBottom="true" />
+                android:layout_alignParentBottom="true" />-->
 
 <!--            <TextView
                 android:id="@+id/delivery"
@@ -91,14 +90,16 @@
                 android:text="@string/total_price"
                 android:layout_marginEnd="8dp"
                 android:layout_marginTop="8dp"
+                android:lineSpacingMultiplier="0.5"
                 android:layout_marginStart="8dp"
-                android:textSize="22sp"
-                android:layout_alignParentBottom="true" />
+                android:textSize="22sp" />
 
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/confirm"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
                 android:fontFamily="@font/arm"
                 android:id="@+id/confirm" />
 

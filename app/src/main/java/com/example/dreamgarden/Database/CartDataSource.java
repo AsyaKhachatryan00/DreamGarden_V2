@@ -1,11 +1,5 @@
 package com.example.dreamgarden.Database;
 
-import androidx.room.Delete;
-import androidx.room.Insert;
-import androidx.room.OnConflictStrategy;
-import androidx.room.Query;
-import androidx.room.Update;
-
 import java.util.List;
 
 import io.reactivex.Completable;
@@ -29,5 +23,8 @@ public interface CartDataSource {
     Single<Integer> deleteCartItem(CartItem cartItem);
 
     Single<Integer> cleanCart(String uId);
+
+    Single<CartItem> getAllItemInCart(String foodId, String uId);
+
 
 }

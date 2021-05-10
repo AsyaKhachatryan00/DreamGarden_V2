@@ -1,4 +1,4 @@
-package com.example.dreamgarden.ui.foodDetails;
+package com.example.dreamgarden.ui.food.foodDetails;
 
 import android.os.Bundle;
 
@@ -11,10 +11,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.bumptech.glide.Glide;
 import com.cepheuen.elegantnumberbutton.view.ElegantNumberButton;
 import com.example.dreamgarden.Common.Common;
@@ -26,9 +24,7 @@ import com.example.dreamgarden.EventBus.CounterCartEvent;
 import com.example.dreamgarden.Models.Foods;
 import com.example.dreamgarden.R;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-
 import org.greenrobot.eventbus.EventBus;
-
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -56,8 +52,6 @@ public class FoodDetailsFragment extends Fragment {
     TextView description;
     @BindView(R.id.count)
     ElegantNumberButton count;
-    @BindView(R.id.rating)
-    RatingBar ratingBar;
     @BindView(R.id.fav)
     FloatingActionButton favorite;
 
@@ -71,7 +65,8 @@ public class FoodDetailsFragment extends Fragment {
         cartItem.setFoodName(Common.selectedFood.getName());
         cartItem.setFoodImage(Common.selectedFood.getImage());
         cartItem.setFoodPrice(Double.valueOf(String.valueOf(Common.selectedFood.getPrice())));
-        cartItem.getFoodCount();
+        cartItem.setFoodCount(Integer.valueOf(count.getNumber()));
+
         cartItem.setFoodExtraPrice(0.0);
 
         compositeDisposable.add(cartDataSource.insertOrReplaceAll(cartItem)
@@ -83,10 +78,7 @@ public class FoodDetailsFragment extends Fragment {
                 }, throwable -> {
                     Toast.makeText(getContext(), "[CART ERROR]"+throwable.getMessage(), Toast.LENGTH_SHORT).show();
                 }));
-
-
     }
-
 
     public static FoodDetailsFragment newInstance() {
         return new FoodDetailsFragment();

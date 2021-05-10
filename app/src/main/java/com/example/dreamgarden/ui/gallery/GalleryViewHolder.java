@@ -54,7 +54,6 @@ public class GalleryViewHolder extends ViewModel implements IGalleryCallbackList
 
             }
         });
-
     }
 
     public MutableLiveData<String> getMessageError() {

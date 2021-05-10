@@ -1,4 +1,4 @@
-package com.example.dreamgarden.ui.foodList;
+package com.example.dreamgarden.ui.food.foodList;
 
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;

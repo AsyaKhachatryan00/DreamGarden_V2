@@ -1,6 +1,5 @@
 package com.example.dreamgarden.Database;
 
-
 import androidx.room.Dao;
 import androidx.room.Delete;
 import androidx.room.Insert;
@@ -20,10 +19,10 @@ public interface CartDAO {
     @Query("SELECT * FROM Cart WHERE uId=:uId")
     Flowable<List<CartItem>> getAllCart(String uId);
 
-    @Query("SELECT COUNT(*) from Cart WHERE uId=:uId")
+    @Query("SELECT SUM(foodCount) from Cart WHERE uId=:uId")
     Single<Integer> countItemCart(String uId);
 
-    @Query("SELECT SUM((foodPrice+foodExtraPrice*foodCount) * foodCount) FROM Cart WHERE uId=:uId")
+    @Query("SELECT SUM((foodPrice+foodExtraPrice) * foodCount) FROM Cart WHERE uId=:uId")
     Single<Double> sumPriceInCart(String uId);
 
     @Query("SELECT * FROM Cart WHERE foodId=:foodId AND uId=:uId")
@@ -41,5 +40,6 @@ public interface CartDAO {
     @Query("DELETE FROM Cart WHERE uId=:uId")
     Single<Integer> cleanCart(String uId);
 
-
+    @Query("SELECT * FROM Cart WHERE foodId=:foodId AND uId=:uId")
+    Single<CartItem> getAllItemInCart(String foodId, String uId);
 }

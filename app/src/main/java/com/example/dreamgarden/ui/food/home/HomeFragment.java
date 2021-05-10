@@ -1,4 +1,4 @@
-package com.example.dreamgarden.ui.home;
+package com.example.dreamgarden.ui.food.home;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;

@@ -53,4 +53,9 @@ public class LocalCartDataSource implements CartDataSource{
     public Single<Integer> cleanCart(String uId) {
         return cartDAO.cleanCart(uId);
     }
+
+    @Override
+    public Single<CartItem> getAllItemInCart(String foodId, String uId) {
+        return cartDAO.getAllItemInCart(foodId, uId);
+    }
 }

@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@drawable/summer"
+    android:layout_height="match_parent"
+    tools:context=".ui.bookNow.BookNowFragment">
+
+  <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:padding="10dp"
+        android:weightSum="2"
+        android:layout_height="wrap_content" >
+
+    <EditText
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:padding="10dp"
+        android:layout_margin="4dp"
+        android:layout_height="45dp"
+        android:id="@+id/book_name"
+        android:background="@color/Green"
+        android:hint="@string/name"
+        android:inputType="textPersonName"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#4DFFFFFF"
+        android:textSize="20sp"
+        android:layout_gravity="center"/>
+
+    <EditText
+        android:id="@+id/book_phone"
+        android:layout_width="0dp"
+        android:padding="10dp"
+        android:layout_margin="4dp"
+        android:layout_height="45dp"
+        android:layout_gravity="center"
+        android:layout_weight="1"
+        android:background="@color/Green"
+        android:hint="@string/phone"
+        android:inputType="phone"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#4DFFFFFF"
+        android:textSize="20sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:padding="10dp"
+        android:weightSum="2"
+        android:layout_height="wrap_content" >
+
+      <EditText
+          android:layout_width="0dp"
+          android:layout_weight="1"
+          android:padding="10dp"
+          android:layout_margin="4dp"
+          android:layout_height="45dp"
+          android:id="@+id/date"
+          android:background="@color/Green"
+          android:hint="@string/date"
+          android:inputType="number"
+          android:textColor="#FFFFFF"
+          android:textColorHint="#4DFFFFFF"
+          android:textSize="20sp"
+          android:layout_gravity="center"/>
+
+      <EditText
+          android:id="@+id/time"
+          android:layout_width="0dp"
+          android:padding="10dp"
+          android:layout_margin="4dp"
+          android:layout_height="45dp"
+          android:layout_gravity="center"
+          android:layout_weight="1"
+          android:background="@color/Green"
+          android:hint="@string/time"
+          android:inputType="time"
+          android:textColor="#FFFFFF"
+          android:textColorHint="#4DFFFFFF"
+          android:textSize="20sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:padding="10dp"
+        android:weightSum="2"
+        android:layout_height="wrap_content" >
+
+      <EditText
+          android:layout_width="0dp"
+          android:layout_weight="1"
+          android:padding="10dp"
+          android:layout_margin="4dp"
+          android:layout_height="45dp"
+          android:id="@+id/guests_count"
+          android:background="@color/Green"
+          android:hint="@string/count"
+          android:inputType="number"
+          android:textColor="#FFFFFF"
+          android:textColorHint="#4DFFFFFF"
+          android:textSize="20sp"
+          android:layout_gravity="center"/>
+
+      <EditText
+          android:id="@+id/event"
+          android:layout_width="0dp"
+          android:padding="10dp"
+          android:layout_margin="4dp"
+          android:layout_height="45dp"
+          android:layout_gravity="center"
+          android:layout_weight="1"
+          android:background="@color/Green"
+          android:hint="@string/event"
+          android:inputType="text"
+          android:textColor="#FFFFFF"
+          android:textColorHint="#4DFFFFFF"
+          android:textSize="20sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:padding="10dp"
+        android:weightSum="2"
+        android:layout_height="wrap_content" >
+
+      <EditText
+          android:layout_width="0dp"
+          android:layout_weight="2"
+          android:padding="10dp"
+          android:layout_height="150dp"
+          android:id="@+id/other"
+          android:background="@color/Green"
+          android:hint="@string/oder"
+          android:inputType="textMultiLine"
+          android:textColor="#FFFFFF"
+          android:textColorHint="#4DFFFFFF"
+          android:textSize="20sp"
+          android:layout_gravity="center"/>
+
+    </LinearLayout>
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:orientation="horizontal"
+      android:padding="10dp"
+      android:weightSum="2"
+      android:layout_height="wrap_content" >
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/table"
+        android:textAllCaps="false"
+        android:layout_margin="10dp"
+        android:padding="10dp"
+        android:textSize="20sp"
+        android:textColor="@color/white"
+        android:id="@+id/table"
+        android:fontFamily="@font/arm" />
+
+    <Spinner
+        android:layout_width="wrap_content"
+        android:layout_height="45dp"
+        android:layout_margin="10dp"
+        android:padding="10dp"
+        android:background="@color/Green"
+        android:textSize="20sp"
+        android:id="@+id/spinner" />
+
+      </LinearLayout>
+
+  </LinearLayout>
+
+  <Button
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_margin="10dp"
+      android:padding="10dp"
+      android:textSize="24sp"
+      android:textColor="@color/white"
+      android:layout_gravity="center|bottom"
+      android:text="@string/send"
+      android:id="@+id/book_now"
+      android:fontFamily="@font/arm" />
+
+
+
+</FrameLayout>

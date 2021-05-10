@@ -38,18 +38,12 @@ public class ImagesFragment extends Fragment {
     LayoutAnimationController layoutAnimationController;
     ImagesAdapter adapter;
 
-    public static ImagesFragment newInstance() {
-        return new ImagesFragment();
-    }
-
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                               Bundle savedInstanceState) {
 
         mViewModel = new  ViewModelProvider(this).get(ImagesViewModel.class);
-
         View root =  inflater.inflate(R.layout.fragment_images, container, false);
-
         unbinder = ButterKnife.bind(this, root);
         initViews();
 
@@ -58,7 +52,6 @@ public class ImagesFragment extends Fragment {
             recyclerViewImage.setAdapter(adapter);
             recyclerViewImage.setLayoutAnimation(layoutAnimationController);
         });
-
         return root;
     }
 

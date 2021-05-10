@@ -1,4 +1,4 @@
-package com.example.dreamgarden.ui.cart;
+package com.example.dreamgarden.ui.food.cart;
 
 import android.content.Context;
 
@@ -18,6 +18,7 @@ import io.reactivex.disposables.CompositeDisposable;
 import io.reactivex.schedulers.Schedulers;
 
 public class CartViewModel extends ViewModel {
+
     private CompositeDisposable compositeDisposable;
     private CartDataSource cartDataSource;
     private MutableLiveData<List<CartItem>> listMutableLiveData;
