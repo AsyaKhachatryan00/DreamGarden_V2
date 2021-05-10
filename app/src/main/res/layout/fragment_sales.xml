@@ -56,7 +56,7 @@
             android:layout_height="wrap_content"
             app:autoScroll="true"
             app:isInfinite="true"
-            app:scrollInterval="6000"
+            app:scrollInterval="4000"
             app:viewpagerAspectRatio="1.33" />
 
     </LinearLayout>
