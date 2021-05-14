@@ -78,11 +78,5 @@ public class BookNow {
         this.tableNumber = tableNumber;
     }
 
-   /* public List<Tables> getTables() {
-        return tables;
-    }
 
-    public void setTables(List<Tables> tables) {
-        this.tables = tables;
-    }*/
 }

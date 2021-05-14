@@ -70,4 +70,11 @@
         android:name="com.example.dreamgarden.ui.table.TableFragment"
         android:label="@string/table"
         tools:layout="@layout/table_fragment"/>
+
+    <fragment
+        android:id="@+id/nav_about"
+        android:name="com.example.dreamgarden.AboutUsFragment"
+        android:label="@string/about_us"
+        tools:layout="@layout/fragment_about_us"/>
+
 </navigation>

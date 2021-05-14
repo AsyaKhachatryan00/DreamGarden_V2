@@ -26,5 +26,4 @@ public interface CartDataSource {
 
     Single<CartItem> getAllItemInCart(String foodId, String uId);
 
-
 }

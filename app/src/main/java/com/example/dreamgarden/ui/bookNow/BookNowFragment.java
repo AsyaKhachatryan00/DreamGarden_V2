@@ -11,8 +11,6 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.example.dreamgarden.Common.Common;
@@ -32,8 +30,8 @@ public class BookNowFragment extends Fragment implements AdapterView.OnItemSelec
     }
 
     @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
-                             @Nullable Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.book_now_fragment, container, false);
 
          name = view.findViewById(R.id.book_name);
@@ -98,6 +96,5 @@ public class BookNowFragment extends Fragment implements AdapterView.OnItemSelec
 
     @Override
     public void onNothingSelected(AdapterView<?> parent) {
-
     }
 }

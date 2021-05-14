@@ -61,9 +61,7 @@ public class Home extends AppCompatActivity {
 
     private AppBarConfiguration mAppBarConfiguration;
     NavController navController;
-
     private CartDataSource cartDataSource;
-
     android.app.AlertDialog dialog;
 
     @BindView(R.id.fab)
@@ -81,7 +79,6 @@ public class Home extends AppCompatActivity {
         setContentView(R.layout.activity_home);
 
         dialog = new SpotsDialog.Builder().setContext(this).setCancelable(false).build();
-
         ButterKnife.bind(this);
         cartDataSource = new LocalCartDataSource(CartDatabase.getInstance(this).cartDAO());
 
@@ -103,7 +100,7 @@ public class Home extends AppCompatActivity {
 
         mAppBarConfiguration = new AppBarConfiguration.Builder(
                 R.id.nav_home, R.id.nav_gallery, R.id.nav_book,
-                R.id.cartFragment, R.id.nav_sales )
+                R.id.cartFragment, R.id.nav_sales, R.id.nav_about )
         .setDrawerLayout(drawer)
                 .build();
         navController = Navigation.findNavController(this, R.id.nav_host_fragment);
@@ -342,10 +339,7 @@ public class Home extends AppCompatActivity {
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new SingleObserver<Integer>() {
                     @Override
-                    public void onSubscribe(@NonNull Disposable d) {
-
-                    }
-
+                    public void onSubscribe(@NonNull Disposable d) {         }
                     @Override
                     public void onSuccess(@NonNull Integer integer) {
                         fab.setCount(integer);

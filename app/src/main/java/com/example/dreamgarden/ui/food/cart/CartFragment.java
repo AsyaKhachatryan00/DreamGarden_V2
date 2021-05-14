@@ -64,8 +64,8 @@ public class CartFragment extends Fragment {
     private CartViewModel mViewModel;
     private Parcelable recyclerViewState;
     private CartDataSource cartDataSource;
-    Double price = 0.0;
-
+    Double serviceFee = 0.0, deliveryPrice = 0.0;
+    TextView final_price;
     private Unbinder unbinder;
 
     @BindView(R.id.rec_cart)
@@ -79,10 +79,12 @@ public class CartFragment extends Fragment {
     @BindView(R.id.empty)
     ImageView empty;
 
+
     @OnClick(R.id.confirm)
     void onConfirmOrderClick() {
         AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
         builder.setTitle("Վճարում");
+        builder.setMessage("Խնդում ենք լրացրեք ամբողջական ինֆոռմացիան");
         View view = LayoutInflater.from(getContext()).inflate(R.layout.confirm_order, null);
 
         RadioButton restoran = view.findViewById(R.id.restoran);
@@ -94,7 +96,8 @@ public class CartFragment extends Fragment {
         RadioButton home = view.findViewById(R.id.home_address);
         RadioButton other = view.findViewById(R.id.other);
         RadioGroup group = view.findViewById(R.id.group);
-
+        final_price = view.findViewById(R.id.totalPrice);
+        final_price.setText(new StringBuilder().append(Double.parseDouble(total_price.getText().toString())));
 
         home.setOnCheckedChangeListener((buttonView, isChecked) -> {
             if (isChecked) {
@@ -114,10 +117,13 @@ public class CartFragment extends Fragment {
                 group.setVisibility(View.GONE);
                 address.setVisibility(View.GONE);
                 address.setText("");
-                Double total = Double.parseDouble(total_price.getText().toString())*0.1;
-                price = price + total;
-        } else { price = 0.0; }
-    });
+                Double total = Double.parseDouble(total_price.getText().toString()) * 0.1;
+                serviceFee = serviceFee + total;
+                final_price.setText(new StringBuilder().append(Double.parseDouble(total_price.getText().toString())+serviceFee));
+            } else { serviceFee = 0.0;
+            final_price.setText(new StringBuilder().append(Double.parseDouble(total_price.getText().toString())+deliveryPrice));
+            }
+        });
 
         delivery.setOnCheckedChangeListener((buttonView, isChecked) -> {
             if (isChecked) {
@@ -125,8 +131,11 @@ public class CartFragment extends Fragment {
                 group.setVisibility(View.VISIBLE);
                 address.setVisibility(View.VISIBLE);
                 address.setText(Common.currentUser.getAddress());
-                price = price + 1000 ;
-            } else { price = 0.0; }
+                deliveryPrice = deliveryPrice + 1000 ;
+                final_price.setText(new StringBuilder().append(Double.parseDouble(total_price.getText().toString())+deliveryPrice));
+            } else { deliveryPrice = 0.0;
+                final_price.setText(new StringBuilder().append(Double.parseDouble(total_price.getText().toString())+serviceFee));
+            }
         });
 
         builder.setView(view);
@@ -155,7 +164,7 @@ public class CartFragment extends Fragment {
                         public void onSubscribe(@NotNull Disposable d) {  }
                         @Override
                         public void onSuccess(@NotNull Double totalPrice) {
-                            double finalPrice = totalPrice + price;
+                            double finalPrice = totalPrice + deliveryPrice + serviceFee;
                             Order order = new Order();
                             order.setUserId(Common.currentUser.getUid());
                             order.setUserName(Common.currentUser.getFName());
@@ -170,7 +179,6 @@ public class CartFragment extends Fragment {
                             order.setTransactionId("Վճարել կանխիկ");
                             writeOrderToFirebase(order);
                         }
-
                         @Override
                         public void onError(@NotNull Throwable e) {
                             Toast.makeText(getContext(), ""+e.getMessage(), Toast.LENGTH_SHORT).show();
@@ -192,12 +200,11 @@ public class CartFragment extends Fragment {
                             .subscribe(new SingleObserver<Integer>() {
                                 @Override
                                 public void onSubscribe(@NotNull Disposable d) {    }
-
                                 @Override
                                 public void onSuccess(@NotNull Integer integer) {
                                     Toast.makeText(getContext(), "Պատվերը հաստատված է", Toast.LENGTH_SHORT).show();
+                                    EventBus.getDefault().postSticky(new CounterCartEvent(true));
                                 }
-
                                 @Override
                                 public void onError(@NotNull Throwable e) {
                                     Toast.makeText(getContext(), ""+e.getMessage(), Toast.LENGTH_SHORT).show();
@@ -364,7 +371,6 @@ public class CartFragment extends Fragment {
                             calculateTotalPrice();
                             rec_cart.getLayoutManager().onRestoreInstanceState(recyclerViewState);
                         }
-
                         @Override
                         public void onError(@NonNull Throwable e) {
                             Toast.makeText(getContext(), "[UPDATE CART]"+e.getMessage(), Toast.LENGTH_SHORT).show();

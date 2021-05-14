@@ -24,5 +24,10 @@
         <item name="buttonTint">@color/white</item>
     </style>
 
+    <style name="about" parent="Theme.MaterialComponents.DayNight">
+        <item name="android:tint">@color/white</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:background">@color/DarkGreen</item>
+    </style>
 
 </resources>

@@ -96,8 +96,8 @@ public class MainActivity extends AppCompatActivity  {
 
     private void showRegisterDialog(FirebaseUser user) {
         androidx.appcompat.app.AlertDialog.Builder builder = new androidx.appcompat.app.AlertDialog.Builder(this);
-        builder.setTitle("Register");
-        builder.setMessage("Please fill information");
+        builder.setTitle("Գրանցում");
+        builder.setMessage("Լրացրեք ամբողջական ինֆորմացիա");
 
         View view = LayoutInflater.from(this).inflate(R.layout.registration, null);
         EditText name = view.findViewById(R.id.Name);
@@ -107,18 +107,18 @@ public class MainActivity extends AppCompatActivity  {
 
         phone.setText(user.getPhoneNumber());
 
-        builder.setNegativeButton("Cancel", (dialog, which) -> {
+        builder.setNegativeButton("Չեղարկել", (dialog, which) -> {
             dialog.dismiss();
         });
-        builder.setPositiveButton("Register", (dialog, which) -> {
+        builder.setPositiveButton("Գրանցվել", (dialog, which) -> {
             if (TextUtils.isEmpty(name.getText().toString())) {
-                Toast.makeText(this, "Please enter your name", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Մուտքագրեք Ձեր անունը", Toast.LENGTH_SHORT).show();
                 return;
             } else  if (TextUtils.isEmpty(email.getText().toString())) {
-                Toast.makeText(this, "Please enter your email", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Մուտքագրեք Ձեր էլ․ հասցեն", Toast.LENGTH_SHORT).show();
                 return;
             } else  if (TextUtils.isEmpty(address.getText().toString())) {
-                Toast.makeText(this, "Please enter your address", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Մուտքագրեք Ձեր հասցեն", Toast.LENGTH_SHORT).show();
                 return;
             }
             User userModel = new User();
@@ -133,7 +133,7 @@ public class MainActivity extends AppCompatActivity  {
                     .addOnCompleteListener(task -> {
                         if (task.isSuccessful()) {
                             dialog.dismiss();
-                            Toast.makeText(MainActivity.this, "Register success", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(MainActivity.this, "Գրանցումը հաջողվեց", Toast.LENGTH_SHORT).show();
                             goToHomeActivity(userModel);
                         }
                     });
