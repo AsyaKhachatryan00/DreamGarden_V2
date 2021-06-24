@@ -9,3 +9,6 @@ Used tecnologies.
 ![imgonline-com-ua-resize-82TDMXHSS4](https://user-images.githubusercontent.com/81712603/123293543-210df080-d525-11eb-8437-6028a80b5ac6.jpg) 
 -  Galery page \
 ![imgonline-com-ua-resize-hfnJBm65jQWu4B7](https://user-images.githubusercontent.com/81712603/123293637-38e57480-d525-11eb-98f3-c05345a53483.jpg)
+- Suggestions
+![imgonline-com-ua-resize-9xCFTCrg5B8](https://user-images.githubusercontent.com/81712603/123295487-cecdcf00-d526-11eb-81fe-9835026f894d.jpg)
+etc...
