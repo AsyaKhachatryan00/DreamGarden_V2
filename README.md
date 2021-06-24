@@ -1,9 +1,9 @@
 Dream Garden - mobile application used in the field of food service. <br>
 Used tecnologies.
   Java, Retrofit, Firebase, EventBus, Glide... <br>
-First page - Menu  <\t> Food Categores  
+First page - Menu  \
 ![imgonline-com-ua-resize-IEtFePV2IjGRDD](https://user-images.githubusercontent.com/81712603/123291684-63cec900-d523-11eb-8bb5-8cc81fd4b15d.jpg)
-
+ Food Categores  
 ![imgonline-com-ua-resize-GvcnTFJvhA](https://user-images.githubusercontent.com/81712603/123293529-1e130000-d525-11eb-83e5-9a3e058714d6.jpg)
 
 #Food Details page
