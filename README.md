@@ -12,5 +12,4 @@ Used tecnologies.
 - Suggestions \
 ![imgonline-com-ua-resize-9xCFTCrg5B8](https://user-images.githubusercontent.com/81712603/123295487-cecdcf00-d526-11eb-81fe-9835026f894d.jpg)
 
-
-\etc...
+Etc...
