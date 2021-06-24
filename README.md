@@ -1,5 +1,5 @@
 # Development of a mobile application used in the food service sector
-Name of App is Dream Garden <br>
+<h3> Name of App is Dream Garden </h3> <br>
 #Menu page <br>
 ![imgonline-com-ua-resize-c71R1uANIDefT9](https://user-images.githubusercontent.com/81712603/123288385-93300680-d520-11eb-8d68-ba2b1ccc9207.jpg) <br>
 #Food Categores page
